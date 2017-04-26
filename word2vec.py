@@ -77,3 +77,13 @@ print("Training model...")
 model = word2vec.Word2Vec(sentences, workers=num_workers, \
             size=num_features, min_count = min_word_count, \
             window = context, sample = downsampling)
+
+# If you don't plan to train the model any further, calling 
+# init_sims will make the model much more memory-efficient.
+model.init_sims(replace=True)
+
+# It can be helpful to create a meaningful model name and 
+# save the model for later use. You can load it later using Word2Vec.load()
+model_name = "quora_context"
+model.save(model_name)
+
