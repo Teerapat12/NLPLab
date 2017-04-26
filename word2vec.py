@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-
-
 import pandas as pd
 
 dataset = pd.read_excel("pokemon TW TH search.xlsx",skiprows=1,encoding ='utf-8')
